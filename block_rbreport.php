@@ -108,7 +108,7 @@ class block_rbreport extends block_base {
 
         // Load user defined title and make sure it's never empty.
         if (!empty($this->config->title)) {
-            $this->title = $this->config->title;
+            $this->title = format_string($this->config->title);
         } else if ($report = $this->get_core_report()) {
             $this->title = $report->get_report_persistent()->get_formatted_name();
         } else if ($report = $this->get_tool_report()) {
